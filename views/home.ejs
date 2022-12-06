@@ -1,0 +1,20 @@
+<%- include("partials/header", {authentication:authentication,username:username}); -%>
+
+    <h1>Home</h1>
+    <p>
+        <%= homeContent %>
+    </p>
+
+    <div class="post-container">
+        <% posts.forEach(function(post) { %>
+            <h1>
+                <%= post.title %>
+            </h1>
+            <p>
+                <%= post.content.slice(0,100) %>... <a class="read-more-text" href="/posts/<%= post.title %>">read
+                        more</a>
+            </p>
+            <% }); %>
+    </div>
+
+    <%- include("partials/footer"); -%>
